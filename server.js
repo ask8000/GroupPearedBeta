@@ -5,17 +5,23 @@ const bodyParser = require('body-parser');
 const app = express();
 const db = new sqlite3.Database('data.db');
 
+// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('hosting'));
 app.set('view engine', 'ejs');
 
-// Set up DB
+// Set up the database
 db.run(`CREATE TABLE IF NOT EXISTS submissions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     message TEXT,
     approved BOOLEAN DEFAULT FALSE
 )`);
+
+// Add this route to render the index page
+app.get('/', (req, res) => {
+    res.render('index');
+});
 
 // Handle form submission
 app.post('/submit', (req, res) => {
@@ -29,11 +35,11 @@ app.post('/submit', (req, res) => {
         if (err) {
             return res.status(500).send('Database error: ' + err.message);
         }
-        res.redirect('/');
+        res.render('index', { successMessage: 'Your form has been submitted!' });
     });
 });
 
-// Admin page to view all inputs
+// Admin page to view all submissions
 app.get('/admin', (req, res) => {
     db.all('SELECT * FROM submissions', (err, rows) => {
         if (err) {
@@ -43,7 +49,7 @@ app.get('/admin', (req, res) => {
     });
 });
 
-// Approve input
+// Approve a submission
 app.post('/approve/:id', (req, res) => {
     db.run('UPDATE submissions SET approved = 1 WHERE id = ?', [req.params.id], function (err) {
         if (err) {
@@ -63,4 +69,5 @@ app.get('/approved', (req, res) => {
     });
 });
 
+// Start the server
 app.listen(3000, () => console.log('Server started on http://localhost:3000'));

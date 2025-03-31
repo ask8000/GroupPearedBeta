@@ -1,0 +1,17 @@
+<h1>Admin Dashboard</h1>
+<a href="/logout" aria-label="Logout">Logout</a>
+
+<% submissions.forEach(sub => { %>
+  <div>
+    <p>
+      <strong><%= sub.name %></strong>: <%= sub.message %>
+    </p>
+    <% if (!sub.approved) { %>
+      <form method="POST" action="/approve/<%= sub.id %>">
+        <button type="submit" aria-label="Approve submission from <%= sub.name %>">Approve</button>
+      </form>
+    <% } else { %>
+      <span aria-label="Approved">✅ Approved</span>
+    <% } %>
+  </div>
+<% }) %>
