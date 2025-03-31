@@ -1,0 +1,10 @@
+<h1>Submit a Message</h1>
+<% if (typeof successMessage !== 'undefined') { %>
+    <p style="color: green;"><%= successMessage %></p>
+<% } %>
+<form action="/submit" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Submit</button>
+</form>
+<a href="/approved">View Approved Messages</a>

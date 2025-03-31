@@ -1,0 +1,6 @@
+<h1>Approved Messages</h1>
+<% submissions.forEach(sub => { %>
+  <div>
+    <p><strong><%= sub.name %></strong>: <%= sub.message %></p>
+  </div>
+<% }) %>

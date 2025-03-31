@@ -1,0 +1,13 @@
+<h1>Admin Panel</h1>
+<% submissions.forEach(sub => { %>
+  <div>
+    <p><strong><%= sub.name %></strong>: <%= sub.message %></p>
+    <% if (!sub.approved) { %>
+      <form method="POST" action="/approve/<%= sub.id %>">
+        <button type="submit">Approve</button>
+      </form>
+    <% } else { %>
+      <span>✅ Approved</span>
+    <% } %>
+  </div>
+<% }) %>
