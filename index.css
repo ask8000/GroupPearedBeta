@@ -1,0 +1,107 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    background-color:#89ab75;
+    color: white;
+    padding: 20px 0;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center contents within header */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+.tagline {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+.portal-button {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin: 25px;
+    width: 40%;
+    min-width: 200px; /* Optional: prevents overflow on smaller screens */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.portal-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.portal-button h2 {
+    color: #19330b;
+    margin-top: 0;
+}
+.portal-button p {
+    color: #666;
+    margin-bottom: 20px;
+}
+.portal-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #e9ffdc;
+}
+.cta-button {
+    background-color: #405735;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #2d3d25;
+}
+footer {
+    background-color: #2d3d25;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
