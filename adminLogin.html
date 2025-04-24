@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Peared</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="adminLogin.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Peared</h1>
+            <div class="tagline">Bringing volunteers and opportunities together</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="volunteer.html">Find Opportunities</a>
+                <a href="host.html">Host an Event</a>
+                <a href="admin.html">Admin Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <div class="admin-header">
+            <h2 class="admin-title">Admin Login</h2>
+            
+        </div>
+        
+        
+        <div class="login-form-container">
+            <form id="adminLoginForm" action="admin.html" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+            <div class="login-error" id="loginError" style="display: none;">Invalid username or password.</div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 VolunteerConnect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
