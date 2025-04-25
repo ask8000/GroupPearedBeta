@@ -6,6 +6,7 @@
     <title>Admin Portal - Peared</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="adminLogin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
@@ -21,28 +22,25 @@
         </div>
     </header>
 
-    <div class="container">
+    <!--<div class="container">-->
         <a href="index.html" class="back-link">← Back to Home</a>
         
-        <div class="admin-header">
-            <h2 class="admin-title">Admin Login</h2>
-            
-        </div>
-        
-        
-        <div class="login-form-container">
-            <form id="adminLoginForm" action="admin.html" method="POST">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <br>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <br>
-                <button type="submit">Login</button>
+        <div class = "wrapper">
+            <form action = "">
+                <h1>Admin Login</h1>
+                <div class ="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class ="input-box">
+                    <input type="text" placeholder="Password" required>
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <button type = "submit" class = "btn">Login</button>
+
             </form>
-            <div class="login-error" id="loginError" style="display: none;">Invalid username or password.</div>
-    </div>
+        </div>
+    <!--</div>-->
 
     <footer>
         <div class="container">
