@@ -63,29 +63,13 @@ header {
     font-size: 1.2rem;
     opacity: 0.9;
 }
-nav {
-    margin-top: 20px;
-}
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-}
-.back-link {
-    display: inline-block;
-    margin: 20px 0;
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 500;
-}
-.admin-header {
+.volunteer-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
-.admin-title {
+.volunteer-title {
     margin: 0;
     color: #2c3e50;
 }
@@ -238,14 +222,15 @@ footer {
     padding: 20px 0;
     margin-top: 40px;
 }
-.empty-state {
+.empty-state, .practice-state {
     text-align: center;
     padding: 40px 20px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px;
 }
-.empty-state p {
+.empty-state, .practice-state p {
     color: #7f8c8d;
     font-size: 1.1rem;
     margin-bottom: 20px;
