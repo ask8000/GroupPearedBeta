@@ -11,4 +11,5 @@ Back-end:
 Front-end:
  - Go through each page and make sure the styling is somewhat cohesive (i.e. make the header the same).
  - Go through each page and see which are affected by the size of the window/screen and make them dependent on screen size.
+ - Change the headers to on the pages that aren't index to be the new prototype one (and fix it to work on mobile)
    - Andrew would recommend Find Opportunities's header because it has the most parts integrated from other headers.
