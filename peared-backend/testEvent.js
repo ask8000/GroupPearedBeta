@@ -1,3 +1,4 @@
+// this exists to make sure the URI works - Nathan
 const mongoose = require('mongoose');
 const Event = require('./models/Event');
 require('dotenv').config();
