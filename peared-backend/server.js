@@ -17,14 +17,17 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.log(err));
 
 app.post('/api/events', async (req, res) => {
-  try {
+try {
+    console.log("Incoming request body:", req.body); // Log the request body
     const event = new Event({
       ...req.body,
       status: 'pending'
     });
-    await event.save();
+    const savedEvent = await event.save();
+    console.log("Event saved:", savedEvent); // Log the saved event
     res.status(201).json({ message: 'Event submitted for approval.' });
   } catch (err) {
+    console.error("Error saving event:", err); // Log the error
     res.status(500).json({ error: 'Failed to submit event' });
   }
 });
