@@ -3,6 +3,7 @@ console.log('admin.js loaded');
 const statusFilter = document.getElementById('statusFilter');
 const eventsContainer = document.getElementById('eventsContainer');
 const paginationButtons = document.querySelectorAll('.page-btn');
+const emptyStateMessage = document.querySelector('.empty-state');
 // Add event listener for status filter
 fetchEvents(statusFilter.value, 1); // Initial fetch on page load
 statusFilter.addEventListener('change', function() {
@@ -57,6 +58,11 @@ function fetchEvents(status, page) {
                 const eventCard = createEventCard(event); // Assuming createEventCard returns an HTML element
                 eventsContainer.appendChild(eventCard);
             });
+            if (data.events.length === 0) {
+                emptyStateMessage.style.display = 'block'; 
+            } else {
+                emptyStateMessage.style.display = 'none'; 
+            }
         })
         .catch(error => {
             console.error('Error fetching events:', error);
