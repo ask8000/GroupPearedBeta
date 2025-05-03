@@ -7,6 +7,7 @@ if nobody completes a significant portion of them.
 Back-end:
  - Create test events to test the volunteer and admin controls, then debug/implement as appropriate.
  - Front-end needs help with info.css to make a dynamic team layout that will be easier to control and use.
+ - On admin/volunteer pages: dynamic number pages, implementation of the "Next" buttom (yes i couldnt get it to work - Nathan)
 
 Front-end:
  - Go through each page and make sure the styling is somewhat cohesive (i.e. make the header the same).
