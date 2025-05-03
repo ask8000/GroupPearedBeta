@@ -44,29 +44,30 @@ function createEventCard(event) {
 }
 
 // Function to fetch events (real)
-function fetchEvents(status, page) {
+async function fetchEvents(status, page) {
     console.log(`Fetching ${status} events for page ${page}`);
-    // Fetch events from the server using the backend API with status filtering
-    fetch(`http://localhost:3000/api/grabit?status=${status}&page=${page}`)
-        .then(response => response.json())
-        .then(data => {
-            // Clear the events container
-            eventsContainer.innerHTML = ''; // Clear previous events
-            // Iterate through the events and create event cards
-            data.events.forEach(event => {
-                const eventCard = createEventCard(event); // Assuming createEventCard returns an HTML element
-                eventsContainer.appendChild(eventCard);
-            });
-            if (data.events.length === 0) {
-                emptyStateMessage.style.display = 'block'; 
-            } else {
-                emptyStateMessage.style.display = 'none'; 
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching events:', error);
+    try {
+        // Fetch events from the server using the backend API with status filtering
+        const response = await fetch(`http://localhost:3000/api/grabit?status=${status}&page=${page}`);
+        const data = await response.json();
+        
+        // Clear the events container
+        eventsContainer.innerHTML = ''; // Clear previous events
+        
+        // Iterate through the events and create event cards
+        data.events.forEach(event => {
+            const eventCard = createEventCard(event); // Assuming createEventCard returns an HTML element
+            eventsContainer.appendChild(eventCard);
         });
-    
+        
+        if (data.events.length === 0) {
+            emptyStateMessage.style.display = 'block'; 
+        } else {
+            emptyStateMessage.style.display = 'none'; 
+        }
+    } catch (error) {
+        console.error('Error fetching events:', error);
+    }
 }
 
 

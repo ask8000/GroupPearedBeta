@@ -20,7 +20,7 @@ app.post('/api/events', async (req, res) => {
 try {
     console.log("Incoming request body:", req.body); // Log the request body
     const event = new Event({
-      ...req.body,
+      ...req.body, // What the hell are the dots doing here? - Nathan
       status: 'pending'
     });
     const savedEvent = await event.save();
