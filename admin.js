@@ -1,10 +1,10 @@
-
+console.log('admin.js loaded');
 // Get DOM elements
 const statusFilter = document.getElementById('statusFilter');
 const eventsContainer = document.getElementById('eventsContainer');
 const paginationButtons = document.querySelectorAll('.page-btn');
-
 // Add event listener for status filter
+fetchEvents(statusFilter.value, 1); // Initial fetch on page load
 statusFilter.addEventListener('change', function() {
     const selectedFilter = this.value;
     // In a real application, this would fetch filtered events from a server
@@ -27,25 +27,45 @@ paginationButtons.forEach(button => {
         fetchEvents(statusFilter.value, page);
     });
 });
+function createEventCard(event) {
+    // Create a card element for the event
+    const card = document.createElement('div');
+    card.classList.add('event-card');
+    
+    // Populate the card with event details
+    card.innerHTML = `
+        <h3>${event.eventName}</h3>
+        <p>${event.eventAdress}</p>
+        <p>Status: ${event.status}</p>
+    `; // TODO: approve/deny, filter by status, pagination
+
+    return card;
+}
 
 // Function to fetch events (simulated)
 function fetchEvents(status, page) {
     // In a real application, this would be an API call
     console.log(`Fetching ${status} events for page ${page}`);
-    
-    // For demo purposes, simulate loading with empty state
-    eventsContainer.innerHTML = '<div class="empty-state"><p>Loading events...</p></div>';
-    
+    // Fetch events from the server using the backend API with status filtering
+    fetch(`http://localhost:3000/api/grabit?status=${status}&page=${page}`)
+        .then(response => response.json())
+        .then(data => {
+            // Clear the events container
+            eventsContainer.innerHTML = ''; // Clear previous events
+            // Iterate through the events and create event cards
+            data.events.forEach(event => {
+                const eventCard = createEventCard(event); // Assuming createEventCard returns an HTML element
+                eventsContainer.appendChild(eventCard);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching events:', error);
+        });
     
     // In a real application, you would replace this with actual data loading
     // and then build the event cards dynamically
 }
 
-// Function to create event card (for use when loading real data)
-function createEventCard(event) {
-    // This would create the HTML structure for an event card
-    // based on the event data received from the server
-}
 
 // Function to handle event approval
 function approveEvent(eventId) {
