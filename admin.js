@@ -37,7 +37,7 @@ function createEventCard(event) {
         <h3>${event.eventName}</h3>
         <p>${event.eventAdress}</p>
         <p>Status: ${event.status}</p>
-    `; // TODO: approve/deny, filter by status, pagination
+    `; 
 
     return card;
 }

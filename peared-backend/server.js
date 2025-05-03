@@ -35,10 +35,10 @@ app.get('/api/grabit', async (req, res) => {
   try {
     const { status, page = 1 } = req.query; // Extract status and page from query parameters
     const query = status !== 'all' ? { status } : {}; // Filter by status if provided
-    const limit = 10; // Number of events per page
+    const limit = 3; // Number of events per page
     const skip = (page - 1) * limit; // Calculate the number of documents to skip
 
-    const docs = await Event.find(query).skip(skip).limit(limit); // Fetch events with pagination
+    const docs = await Event.find(query).sort({eventDate: 1}).skip(skip).limit(limit); // Fetch events with pagination and sort by eventDate in ascending order
     res.status(200).json({ events: docs });
   } catch (err) {
     console.error("Error fetching events:", err);
