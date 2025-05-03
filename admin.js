@@ -36,6 +36,7 @@ function fetchEvents(status, page) {
     // For demo purposes, simulate loading with empty state
     eventsContainer.innerHTML = '<div class="empty-state"><p>Loading events...</p></div>';
     
+    
     // In a real application, you would replace this with actual data loading
     // and then build the event cards dynamically
 }
