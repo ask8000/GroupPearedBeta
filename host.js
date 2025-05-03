@@ -5,7 +5,6 @@ function addTeam() {
     const newTeam = document.createElement('div');
     newTeam.className = 'team-container';
     newTeam.id = 'team' + teamCount;
-    // TODO: ts needs fricking handlebars
     newTeam.innerHTML = `
         <div class="team-header">
             <h4>Team ${teamCount}</h4>

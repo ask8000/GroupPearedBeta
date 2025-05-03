@@ -13,6 +13,5 @@ Front-end:
  - Go through each page and see which are affected by the size of the window/screen and make them dependent on screen size.
  - Make all the drop down boxes click to drop down (especially in about me)
  - Change the headers to on the pages that aren't index to be the new prototype one (and fix it to work on mobile)
- - Someone do handlebars on host.js my eyes burn - Nathan
    - Andrew would recommend Find Opportunities's header because it has the most parts integrated from other headers.
    - Nathan reccomends that the header should always be the same for UX reasons
