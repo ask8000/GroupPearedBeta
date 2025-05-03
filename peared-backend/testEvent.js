@@ -12,12 +12,12 @@ async function testEvent() {
     console.log('Connected to MongoDB');
 
     const event = new Event({
-      eventName: 'Test Event',
+      eventName: 'Test Event 3',
       OrganizationName: 'Test Organization',
       organizerEmail: 'test@example.com',
       eventDate: '2025-05-15',
       eventAdress: '123 Test St, Test City',
-      eventDescription: 'This is a test event.',
+      eventDescription: 'This is a test event for pagination.',
       location: '37.7749, -122.4194',
       teams: [
         {
@@ -26,6 +26,7 @@ async function testEvent() {
           description: 'This is a test team.',
         },
       ],
+      status: 'pending',
     });
 
     const savedEvent = await event.save();
