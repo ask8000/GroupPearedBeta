@@ -38,14 +38,13 @@ function createEventCard(event) {
         <h3>${event.eventName}</h3>
         <p>${event.eventAdress}</p>
         <p>Status: ${event.status}</p>
-    `; 
+    `; // TODO: Approve/deny buttons and also is there a better way to handle this? - Nathan
 
     return card;
 }
 
-// Function to fetch events (simulated)
+// Function to fetch events (real)
 function fetchEvents(status, page) {
-    // In a real application, this would be an API call
     console.log(`Fetching ${status} events for page ${page}`);
     // Fetch events from the server using the backend API with status filtering
     fetch(`http://localhost:3000/api/grabit?status=${status}&page=${page}`)
@@ -68,8 +67,6 @@ function fetchEvents(status, page) {
             console.error('Error fetching events:', error);
         });
     
-    // In a real application, you would replace this with actual data loading
-    // and then build the event cards dynamically
 }
 
 
