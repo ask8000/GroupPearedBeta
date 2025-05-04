@@ -46,5 +46,31 @@ app.get('/api/grabit', async (req, res) => {
   }
 });
 
+const validCredentials = [
+  { username: 'admin', password: 'admin123' },
+  { username: 'manager', password: 'manager456' }
+];
+app.get('/api/login', async (req, res) => {
+  try {
+    const {username, password} = req.query; 
+    // Validate credentials
+    let isValid = false;
+    for (let i = 0; i < validCredentials.length; i++) {
+      if (validCredentials[i].username === username && validCredentials[i].password === password) {
+        isValid = true;
+        break;
+      }
+    }
+    if (isValid) {
+      // Set session (in a real app, you would use sessions or JWTs)
+      res.status(200).json({ message: 'Login successful' });
+    } else {
+      res.status(401).json({ error: 'Invalid username or password' });
+    }
+  } catch (err) {
+    console.error("Error during login:", err);
+    res.status(500).json({ error: 'Login failed' });
+  }
+})
 
 app.listen(3000, () => console.log('Server running on port 3000'));

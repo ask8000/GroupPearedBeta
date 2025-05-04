@@ -1,10 +1,4 @@
 
-// Sample admin credentials (in a real app, this would be server-side)
-// Very secure trust
-const validCredentials = [
-    { username: 'admin', password: 'admin123' },
-    { username: 'manager', password: 'manager456' }
-];
 
 // Get the form and input elements
 const loginForm = document.querySelector('.wrapper form');
@@ -30,21 +24,17 @@ loginForm.addEventListener('submit', function(event) {
     const username = usernameInput.value;
     const password = passwordInput.value;
     
-    // Validate credentials
-    const isValid = validCredentials.some(cred => 
-        cred.username === username && cred.password === password
-    );
-    
-    if (isValid) {
-        // Set session
-        sessionStorage.setItem('loggedIn', 'true');
-        sessionStorage.setItem('currentUser', username);
-        
-        // Redirect to admin dashboard
-        window.location.href = 'admin.html';
-    } else {
-        // Show error message
-        errorMessage.textContent = 'Invalid username or password. Please try again.';
-        errorMessage.style.display = 'block';
-    }
+    const url = `http://localhost:3000/api/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+    fetch(url)
+        .then(response => response.json()) 
+        .then(data => {
+            if (data.error) {
+                // Display error message if login fails
+                errorMessage.textContent = data.error;
+                errorMessage.style.display = 'block';
+            } else {
+                // Redirect to the dashboard or another page on successful login
+                window.location.href = 'admin.html'; // Change this to your desired redirect URL
+            }
+        })
 });
