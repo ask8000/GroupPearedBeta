@@ -25,16 +25,18 @@ loginForm.addEventListener('submit', function(event) {
     const password = passwordInput.value;
     
     const url = `http://localhost:3000/api/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
-    fetch(url)
+    fetch(url, {credentials: 'include'})
         .then(response => response.json()) 
         .then(data => {
             if (data.error) {
                 // Display error message if login fails
+                console.log("Login failed:", data.error); // Log the error for debugging
                 errorMessage.textContent = data.error;
                 errorMessage.style.display = 'block';
             } else {
                 // Redirect to the dashboard or another page on successful login
-                window.location.href = 'admin.html'; // Change this to your desired redirect URL
+                window.location.href = 'admin.html';
             }
-        })
+        });
+    
 });

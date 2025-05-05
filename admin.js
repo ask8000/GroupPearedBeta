@@ -46,28 +46,48 @@ function createEventCard(event) {
 // Function to fetch events (real)
 async function fetchEvents(status, page) {
     console.log(`Fetching ${status} events for page ${page}`);
-    try {
-        // Fetch events from the server using the backend API with status filtering
-        const response = await fetch(`http://localhost:3000/api/grabit?status=${status}&page=${page}`);
-        const data = await response.json();
-        
-        // Clear the events container
-        eventsContainer.innerHTML = ''; // Clear previous events
-        
-        // Iterate through the events and create event cards
-        data.events.forEach(event => {
-            const eventCard = createEventCard(event); // Assuming createEventCard returns an HTML element
-            eventsContainer.appendChild(eventCard);
+    // test credentials for debugging
+    let valid = false;
+    // try {
+    //     const response = await fetch(`http://localhost:3000/api/checkLogin`, { credentials: 'include' });
+    //     if (response.ok) {
+    //         const data = await response.json();
+    //         valid = data.loggedIn; // Check if the user is logged in
+
+    //     } else {
+    //         throw new Error('Not logged in or session expired');
+    //     }
+    // } catch (error) {
+    //     console.error('Error checking session:', error);
+    //     // Redirect to login page or show an error message
+    //     window.location.href = 'adminLogin.html';
+    // }
+    // // Fetch events from the server using the backend API with status filtering
+    // if (!valid) {
+    //     return; // Prevent fetching if not logged in
+    // }
+    // TODO: make this work lololol
+    fetch(`http://localhost:3000/api/grabit?status=${status}&page=${page}`)
+        .then(response => response.json())
+        .then(data => {
+            // Clear the events container
+            eventsContainer.innerHTML = ''; // Clear previous events
+            
+            // Iterate through the events and create event cards
+            data.events.forEach(event => {
+                const eventCard = createEventCard(event); // Assuming createEventCard returns an HTML element
+                eventsContainer.appendChild(eventCard);
+            });
+            
+            if (data.events.length === 0) {
+                emptyStateMessage.style.display = 'block'; 
+            } else {
+                emptyStateMessage.style.display = 'none'; 
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching events:', error);
         });
-        
-        if (data.events.length === 0) {
-            emptyStateMessage.style.display = 'block'; 
-        } else {
-            emptyStateMessage.style.display = 'none'; 
-        }
-    } catch (error) {
-        console.error('Error fetching events:', error);
-    }
 }
 
 

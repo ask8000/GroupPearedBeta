@@ -2,13 +2,29 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const session = require('express-session');
 require('dotenv').config();
 
 const Event = require('./models/Event');
 
 const app = express();
-app.use(cors());
+
 app.use(express.json());
+
+app.use(session({
+  secret: 'mysecretkey',       // Used to sign the session ID cookie CHANGE TS IN PRODUCTION
+  resave: false,               // Don't save session if nothing changed
+  saveUninitialized: false,    // Don't save empty sessions
+  cookie: {
+    secure: false, // Set to true only if using HTTPS
+    httpOnly: true, // Prevent client-side JavaScript from accessing the cookie
+    sameSite: 'lax', // Adjust this if needed for cross-origin requests
+  },    
+}));
+app.use(cors({
+  origin: 'http://127.0.0.1:5500', // live server link so...
+  credentials: true 
+}));
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -62,7 +78,8 @@ app.get('/api/login', async (req, res) => {
       }
     }
     if (isValid) {
-      // Set session (in a real app, you would use sessions or JWTs)
+      req.session.user = username;
+      console.log("Session created: ", req.session); // Log successful login
       res.status(200).json({ message: 'Login successful' });
     } else {
       res.status(401).json({ error: 'Invalid username or password' });
@@ -72,5 +89,14 @@ app.get('/api/login', async (req, res) => {
     res.status(500).json({ error: 'Login failed' });
   }
 })
+
+app.get('/api/checkLogin', (req, res) => {
+  console.log("Here is the session data: ", req.session); 
+  if (req.session.user) {
+    res.status(200).json({ loggedIn: true, username: req.session.user });
+  } else {
+    res.status(200).json({ loggedIn: false });
+  }
+}) // TODO: make this work its not saving session data
 
 app.listen(3000, () => console.log('Server running on port 3000'));
