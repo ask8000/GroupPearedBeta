@@ -8,7 +8,7 @@ Back-end:
  - Create test events to test the volunteer and admin controls, then debug/implement as appropriate.
  - Front-end needs help with info.css to make a dynamic team layout that will be easier to control and use.
  - On admin/volunteer pages: dynamic number pages, implementation of the "Next" buttom (yes i couldnt get it to work - Nathan)
-
+ - Make auth work (I tried cookies with express-session and it refused to work for me, maybe something persistant with mongoDB might work? - nathan)
 Front-end:
  - Go through each page and make sure the styling is somewhat cohesive (i.e. make the header the same).
  - Go through each page and see which are affected by the size of the window/screen and make them dependent on screen size.
