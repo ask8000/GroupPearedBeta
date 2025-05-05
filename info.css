@@ -171,17 +171,17 @@ footer {
   
 /* Initially hide the extra text */
 .extra-sections .extra-text {
-    display: none; /* Make it invisible initially */
+    display: none; 
     opacity: 0;
     transition: opacity 0.3s ease;
     font-weight: normal;
 }
-
-/* Reveal the extra text on hover */
-.extra-sections div:hover .extra-text {
-    display: block; /* Make it visible */
-    opacity: 1;     /* Smooth transition to visible */
+.extra-sections .extra-text.visible {
+    display: block; 
+    opacity: 1;
 }
+/* Reveal the extra text on hover */
+
 
 form input {
     background-color: #CDE0C2;
