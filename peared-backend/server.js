@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const session = require('express-session');
+const morgan = require('morgan');
 require('dotenv').config();
 
 const Event = require('./models/Event');
@@ -10,6 +11,8 @@ const Event = require('./models/Event');
 const app = express();
 
 app.use(express.json());
+
+app.use(morgan('dev')); 
 
 app.use(session({
   secret: 'mysecretkey',       // Used to sign the session ID cookie CHANGE TS IN PRODUCTION
@@ -22,7 +25,6 @@ app.use(session({
   },    
 }));
 app.use(cors({
-  origin: 'http://127.0.0.1:5500', // live server link so...
   credentials: true 
 }));
 
