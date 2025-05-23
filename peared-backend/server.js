@@ -6,7 +6,7 @@ const session = require('express-session');
 const morgan = require('morgan');
 require('dotenv').config();
 
-const Event = require('./models/Event');
+const { Event, Team, People } = require('./models/Event');
 
 const app = express();
 
@@ -92,13 +92,31 @@ app.get('/api/login', async (req, res) => {
   }
 })
 
-app.get('/api/checkLogin', (req, res) => {
-  console.log("Here is the session data: ", req.session); 
-  if (req.session.user) {
-    res.status(200).json({ loggedIn: true, username: req.session.user });
-  } else {
-    res.status(200).json({ loggedIn: false });
+app.post('/api/signup', async (req, res) => {
+  try {
+    const eventId = req.query.eventId;
+    const person = new People({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email
+    });
+    // append the person to the event's team
+    const event = await Event.findById(eventId);
+    if (!event) {
+      return res.status(404).json({ error: 'Event not found' });
+    }
+    if (!event.teams || event.teams.length === 0) {
+      return res.status(404).json({ error: 'Team not found' });
+    }
+    const team = event.teams[0]; // Access the first team in the array
+    team.people.push(person);
+    await event.save();
+    console.log("Person signed up:", person); // Log the signed-up person
+    res.status(201).json({ message: 'Signup successful' });
+  } catch (err) {
+    console.error("Error during signup:", err);
+    res.status(500).json({ error: 'Signup failed' });
   }
-}) // TODO: make this work its not saving session data
+})
 
 app.listen(3000, () => console.log('Server running on port 3000'));
