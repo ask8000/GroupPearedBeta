@@ -49,6 +49,22 @@ try {
     res.status(500).json({ error: 'Failed to submit event' });
   }
 });
+
+app.get('/api/events/:eventId', async (req, res) => {
+  try {
+    const eventId = req.params.eventId;
+    const event = await Event.findById(eventId);
+    if (!event) {
+      return res.status(404).json({ error: 'Event not found' });
+    }
+    console.log("Event found:", event); // Log the found event
+    res.status(200).json(event);
+  } catch (err) {
+    console.error("Error fetching event:", err);
+    res.status(500).json({ error: 'Failed to fetch event' }); 
+  }
+});
+
 app.get('/api/grabit', async (req, res) => {
   try {
     const { status, page = 1 } = req.query; // Extract status and page from query parameters
