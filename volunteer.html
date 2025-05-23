@@ -6,6 +6,7 @@
     <title>Peared - Find Opportunities</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="volunteer.css">
+    <script src="volunteer.js" defer></script>
 </head>
 <body>
     <header>
@@ -30,19 +31,20 @@
         <div class="volunteer-header">
             <h2 class="volunteer-title">Volunteer Registration</h2>
             
-            <div class="filter-container">
+            <!-- <div class="filter-container">
                 <label for="statusFilter">Filter:</label>
                 <select id="statusFilter">
                     <option value="all">Add more options later</option>
                 </select>
-            </div>
+            </div> 
+            Ignore for now, we just need an MVP rn-->
         </div>
-        
+        <div class="empty-state">
+            <p>No events to display. Select a filter or check back later.</p>
+        </div>
         <div id="eventsContainer">
             <!-- Events will be dynamically loaded here -->
-            <div class="empty-state">
-                <p>No events to display. Select a filter or check back later.</p>
-            </div>
+
             <div class="practice-state">
                 <p>If there were multiple events, this would happen.</p>
                 <p>Remove me later.</p>
@@ -62,68 +64,5 @@
             <p>&copy; 2025 Peared. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get DOM elements
-            const statusFilter = document.getElementById('statusFilter');
-            const eventsContainer = document.getElementById('eventsContainer');
-            const paginationButtons = document.querySelectorAll('.page-btn');
-            
-            // Add event listener for status filter
-            statusFilter.addEventListener('change', function() {
-                const selectedFilter = this.value;
-                // In a real application, this would fetch filtered events from a server
-                fetchEvents(selectedFilter, 1);
-            });
-            
-            // Pagination event listeners
-            paginationButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    paginationButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // In a real application, this would fetch the appropriate page of events
-                    const page = this.textContent.includes('Next') ? 
-                        parseInt(document.querySelector('.page-btn.active').textContent) + 1 : 
-                        parseInt(this.textContent);
-                    
-                    fetchEvents(statusFilter.value, page);
-                });
-            });
-            
-            // Function to fetch events (simulated)
-            function fetchEvents(status, page) {
-                // In a real application, this would be an API call
-                console.log(`Fetching ${status} events for page ${page}`);
-                
-                // For demo purposes, simulate loading with empty state
-                eventsContainer.innerHTML = '<div class="empty-state"><p>Loading events...</p></div>';
-                
-                // In a real application, you would replace this with actual data loading
-                // and then build the event cards dynamically
-            }
-            
-            // Function to create event card (for use when loading real data)
-            function createEventCard(event) {
-                // This would create the HTML structure for an event card
-                // based on the event data received from the server
-            }
-            
-            // Function to handle event approval
-            function approveEvent(eventId) {
-                // In a real application, this would send an API request to approve the event
-                console.log(`Approving event ${eventId}`);
-            }
-            
-            // Function to handle event denial
-            function denyEvent(eventId) {
-                // In a real application, this would send an API request to deny the event
-                console.log(`Denying event ${eventId}`);
-            }
-        });
-    </script>
 </body>
 </html>
