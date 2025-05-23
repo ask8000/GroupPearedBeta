@@ -249,3 +249,17 @@ footer {
 .signup-btn:hover {
     background-color: #2d3d25;
 }
+.details-btn {
+    background-color: #405735;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.details-btn:hover {
+    background-color: #2d3d25;
+}

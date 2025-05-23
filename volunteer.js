@@ -37,6 +37,9 @@ function createEventCard(event) {
         <a href="/signup.html?eventId=${encodeURIComponent(event._id)}">
             <button class="signup-btn">Sign Up</button>
         </a>
+        <a href="/details.html?eventId=${encodeURIComponent(event._id)}">
+            <button class="details-btn">Details</button>
+        </a>
     `;
 
     return card;
