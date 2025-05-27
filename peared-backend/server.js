@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const session = require('express-session');
 const morgan = require('morgan');
+const path = require('path');
 require('dotenv').config();
 
 const { Event, Team, People } = require('./models/Event');
@@ -13,6 +14,8 @@ const app = express();
 app.use(express.json());
 
 app.use(morgan('dev')); 
+
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.use(session({
   secret: 'mysecretkey',       // Used to sign the session ID cookie CHANGE TS IN PRODUCTION
