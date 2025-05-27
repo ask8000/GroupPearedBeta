@@ -47,7 +47,7 @@ document.getElementById('hostForm').addEventListener('submit', function(e) {
         OrganizationName: formData.get("OrganizationName"),
         organizerEmail: formData.get("organizerEmail"),
         eventDate: formData.get("eventDate"),
-        eventAdress: formData.get("eventAdress"),
+        eventAdress: formData.get("eventAddress"),
         eventDescription: formData.get("eventDescription"),
         location: formData.get("location"),
         teams: []
