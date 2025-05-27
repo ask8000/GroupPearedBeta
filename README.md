@@ -9,7 +9,7 @@ Back-end:
    - Volunteers page
  - Front-end needs help with info.css to make a dynamic team layout that will be easier to control and use.
  - Allow the admins to approve/deny events 
- - On admin/volunteer pages: dynamic number pages, implementation of the "Next" buttom (yes i couldnt get it to work - Nathan)
+ - On admin/volunteer pages: dynamic number pages, implementation of the "Next" button (yes i couldnt get it to work - Nathan)
  - Dynamic numbers (right now its only 1 - 2 - 3 but there could be more pages)
  - Allow users to sign up (auth prob needs to work tho) OR emails like signupgenius? (since we're trying to emulate that)
  - Make auth work (I tried cookies with express-session and it refused to work for me, maybe something persistant with mongoDB might work? - nathan)
@@ -17,7 +17,7 @@ Back-end:
 Front-end:
  - Go through each page and see which are affected by the size of the window/screen and make them dependent on screen size (many pages break on mobile!).
  - About me add icons to show they are dropdown boxes
- - Animate dropdowns
+ - Animate dropdowns so they're NOT hover
  - Sign-up page 
  - Fill in the Info page with actual info
  - The raising of icons on hover is quite annoying, and should be removed from all pages (for buttons the transition should be replaced by a darkening/lightening effect)
