@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="signup.css">
-    <script src="signup.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="css/details.css">
+    <script src="js/details.js" defer></script>
 </head>
 
 <body>
@@ -26,23 +27,20 @@
         </div>
     </header>
 
-
     <a href="index.html" class="back-link">← Back to Home</a>
 
     <div class="wrapper">
-        <form id="signup-form">
-            <h1>Sign Up</h1>
-            <div class="input-box">
-                <input type="text" placeholder="First Name" name="firstName" required />
-            </div>
-            <div class="input-box">
-                <input type="text" placeholder="Last Name" name="lastName" required />
-            </div>
-            <div class="input-box">
-                <input type="email" placeholder="Email" name="email" required />
-            </div>
-            <button type="submit" class="btn">Sign Up</button>
-        </form>
+        <h1 id="eventName">Event Name</h1>
+        <p id="eventDescription">Event Description</p>
+        <p id="eventDate">Event Date</p>
+        <p id="eventLocation">Event Location</p>
+        <p id="eventOrganizer">Organizer: <span id="organizerName">Organizer Name</span></p>
+        <p id="eventEmail">Contact: <span id="organizerEmail">Organizer Email</span></p>
+        <p id="eventVolunteers">Volunteer Count: <span id="volunteerCount">0</span></p>
+        <h2>People:</h2>
+        <div class="peopleContainer">
+            <!-- JavaScript will populate people here -->
+        </div>
     </div>
 
     <footer>
