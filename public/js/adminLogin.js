@@ -24,7 +24,7 @@ loginForm.addEventListener('submit', function(event) {
     const username = usernameInput.value;
     const password = passwordInput.value;
     
-    const url = `http://localhost:3000/api/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+    const url = `${window.location.origin}/api/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
     fetch(url, {credentials: 'include'})
         .then(response => response.json()) 
         .then(data => {

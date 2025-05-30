@@ -17,7 +17,7 @@ signupForm.addEventListener('submit', function(e) {
         email: formData.get("email")
     };
     console.log("Submitting event data:", personData)
-    fetch(`http://localhost:3000/api/signup?eventId=${eventId}`, {
+    fetch(`${window.location.origin}/api/signup?eventId=${eventId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

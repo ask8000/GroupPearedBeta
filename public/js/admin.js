@@ -67,7 +67,7 @@ async function fetchEvents(status, page) {
     //     return; // Prevent fetching if not logged in
     // }
     // TODO: make this work lololol
-    fetch(`http://localhost:3000/api/grabit?status=${status}&page=${page}`)
+    fetch(`${window.location.origin}/api/grabit?status=${status}&page=${page}`)
         .then(response => response.json())
         .then(data => {
             // Clear the events container

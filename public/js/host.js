@@ -63,7 +63,7 @@ document.getElementById('hostForm').addEventListener('submit', function(e) {
 
     console.log("Submitting event data:", eventData);
 
-    fetch("http://localhost:3000/api/events", {
+    fetch(`${window.location.origin}/api/events`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

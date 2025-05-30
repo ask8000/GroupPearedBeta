@@ -48,7 +48,7 @@ function createEventCard(event) {
 // Function to fetch events (real)
 async function fetchEvents(status, page) {
     console.log(`Fetching ${status} events for page ${page}`);
-    fetch(`http://localhost:3000/api/grabit?status=${status}&page=${page}`)
+    fetch(`${window.location.origin}/api/grabit?status=${status}&page=${page}`)
         .then(response => response.json())
         .then(data => {
             // Clear the events container
