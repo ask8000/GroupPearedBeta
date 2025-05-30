@@ -3,7 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const eventId = params.get('eventId');
 
 
-fetch(`http://localhost:3000/api/events/${eventId}`)
+fetch(`${window.location.origin}/api/events/${eventId}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
