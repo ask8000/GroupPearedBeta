@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Details</title>
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/details.css">
     <script src="js/details.js" defer></script>
+    
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div>
             <div class="header-content">
                 <img src="assets/PearedLogo.jpg" alt="Logo" class="logo" onclick="location.href='index.html'">
@@ -25,10 +27,14 @@
                 <a href="info.html">About Us</a>
             </nav>
         </div>
-    </header>
+    </header> -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
 
-    <a href="index.html" class="back-link">← Back to Home</a>
 
+    <!-- <a href="index.html" class="back-link">← Back to Home</a> -->
+
+    <div class="main-content">
     <div class="wrapper">
         <h1 id="eventName">Event Name</h1>
         <p id="eventDescription">Event Description</p>
@@ -42,12 +48,10 @@
             <!-- JavaScript will populate people here -->
         </div>
     </div>
+</div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Peared. All rights reserved.</p>
-        </div>
-    </footer>
+   <div id="footer-container"></div>
+    <script src="loadFooter.js"></script>
 </body>
 
 </html>

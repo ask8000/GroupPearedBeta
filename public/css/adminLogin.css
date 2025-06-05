@@ -1,17 +1,25 @@
 body {
-    font-family: 'Playfair Display', serif;
+    /* font-family: 'Playfair Display', serif; */
     margin: 0;
     padding: 0;
     background-color: #f5f7fa;
     color: #333;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+  min-height: 100vh;  
+  margin: 0; 
 }
 .container {
-    max-width: 1200px;
+    max-width:500px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
+    flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-header {
+/* header {
     background-color:#89ab75;
     color: white;
     padding: 20px 0;
@@ -34,7 +42,7 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-weight: 500;
-}
+} 
 .back-link {
     display: inline-block;
     margin: 20px 0;
@@ -43,7 +51,7 @@ nav a {
     font-weight: 500;
     left: 20px;
     position: relative;
-}
+}*/
 .admin-header {
     display: flex;
     justify-content: space-between;
@@ -146,6 +154,7 @@ select {
     padding: 20 px;
     border-radius: 10px;
     margin: 0 auto;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -259,13 +268,7 @@ select {
     color: white;
     border-color: #3498db;
 }
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-}
+
 .empty-state {
     text-align: center;
     padding: 40px 20px;
