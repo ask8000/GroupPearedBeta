@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peared - Info</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/info.css">
     <link rel="icon" href="assets/PearedLogo.jpg" type="image/jpeg">
     <script src="js/info.js" defer></script>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div>
             <div class="header-content">
                 <img src="assets/PearedLogo.jpg" alt="Logo" class="logo" onclick="location.href='index.html'">
@@ -25,7 +25,9 @@
                 <a href="host.html">Host an Event</a>
             </nav>
         </div>
-    </header>
+    </header> -->
+    <div id="header-container"></div>
+    <script src="loadHeader.js"></script>
 
     <div class="container">
         <div class="main-content">
@@ -34,7 +36,8 @@
             
             <div class="button-container">
                 <div class="about-section">
-                    <div class="portal-icon">🛠</div>
+                    <div class="portal-icon">⚒️</div>
+                    <!-- 🛠 -->
                     <h2>Volunteer Opportunities</h2>
                     <p>Meet the dedicated individuals behind our organization:</p>
                     <div class="extra-sections">
@@ -158,10 +161,7 @@
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Peared. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
+    <script src="loadFooter.js"></script>
 </body>
 </html>
