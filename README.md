@@ -16,7 +16,7 @@ MVP Front-end:
 
 -Update the team member information.
 
--Make a consistent, more compact header that is the same on every page for reusability
+-✅Make a consistent, more compact header that is the same on every page for reusability
 
 Do these later if you have time!
 
@@ -30,13 +30,13 @@ Back-end:
 
 Front-end:
 
--The raising of icons on hover is quite annoying, and should be removed from all pages (for buttons the transition should be replaced by a darkening/lightening effect) (someone steal the effect from codecademy)
+-✅The raising of icons on hover is quite annoying, and should be removed from all pages (for buttons the transition should be replaced by a darkening/lightening effect) (someone steal the effect from codecademy)
 
 -Webpage requires a more modern web format relatable to modern lifestyle services.
 
--Use sans-serif font instead of a serif one
+-✅Use sans-serif font instead of a serif one
 
--Make a consistent footer, as well, following other websites’ examples
+-Make a consistent footer, as well, following other websites’ examples-consistent ✅ but does not have any info on it
 
 -Redesign of landing page so that there are rows that take up the screen’s width instead of boxes
 
