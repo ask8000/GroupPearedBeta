@@ -16,7 +16,7 @@ MVP Front-end:
 
 -Update the team member information.
 
--✅Make a consistent, more compact header that is the same on every page for reusability
+-Everything sucks on mobile, make sure it doesnt.
 
 Do these later if you have time!
 
