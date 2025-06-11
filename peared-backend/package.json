@@ -4,8 +4,8 @@
     "description": "Backend for Peared - a platform to connect volunteers and organizations",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js",
-        "dev": "nodemon server.js"
+        "start": "node peared-backend/server.js",
+        "dev": "nodemon peared-backend/server.js"
     },
     "keywords": [],
     "author": "Anushka",
