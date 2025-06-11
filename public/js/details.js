@@ -18,23 +18,21 @@ fetch(`${window.location.origin}/api/events/${eventId}`)
         document.querySelector('#eventLocation').innerHTML = data.eventAdress;
         document.querySelector('#organizerName').innerHTML = data.OrganizationName;
         document.querySelector('#organizerEmail').innerHTML = data.organizerEmail;
-        // document.querySelector('#volunteerCount').innerHTML = data.teams[0].size;
-        // for (let i = 0; i < data.teams[0].people.length; i++) { // single person
-        //     const person = data.teams[0].people[i];
-        //     const personDiv = document.createElement('div');
-        //     personDiv.className = 'person';
-        //     personDiv.innerHTML = `${person.firstName} ${person.lastName} (${person.email})`;
-        //     document.querySelector('.peopleContainer').appendChild(personDiv);
-        // }
+
+        // Teams
         for (const list of data.teams) {
             const name = list.name;
             const size = list.size;
             const teamDiv = document.createElement('div');
             const nameDiv = document.createElement('div');
+            const descDiv = document.createElement('div');
             nameDiv.innerHTML = `<h2>${name}</h2>Capacity: ${size}`;
             nameDiv.className = 'teamName';
+            descDiv.innerHTML = `<p>${list.description}</p>`;
+            descDiv.className = 'teamDesc';
             document.querySelector('.peopleContainer').appendChild(teamDiv);
             teamDiv.appendChild(nameDiv);
+            teamDiv.appendChild(descDiv);
             teamDiv.className = 'team';
             for (const person of list.people) {
                 const personDiv = document.createElement('div');
