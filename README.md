@@ -28,6 +28,8 @@ Back-end:
 
 -Make events be hidden after signing up for them
 
+-Make auth work
+
 Front-end:
 
 -✅The raising of icons on hover is quite annoying, and should be removed from all pages (for buttons the transition should be replaced by a darkening/lightening effect) (someone steal the effect from codecademy)
