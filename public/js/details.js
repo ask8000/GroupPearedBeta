@@ -18,7 +18,7 @@ fetch(`${window.location.origin}/api/events/${eventId}`)
         document.querySelector('#eventLocation').innerHTML = data.eventAdress;
         document.querySelector('#organizerName').innerHTML = data.OrganizationName;
         document.querySelector('#organizerEmail').innerHTML = data.organizerEmail;
-        document.querySelector('#volunteerCount').innerHTML = data.teams[0].size;
+        // document.querySelector('#volunteerCount').innerHTML = data.teams[0].size;
         // for (let i = 0; i < data.teams[0].people.length; i++) { // single person
         //     const person = data.teams[0].people[i];
         //     const personDiv = document.createElement('div');
@@ -28,9 +28,10 @@ fetch(`${window.location.origin}/api/events/${eventId}`)
         // }
         for (const list of data.teams) {
             const name = list.name;
+            const size = list.size;
             const teamDiv = document.createElement('div');
             const nameDiv = document.createElement('div');
-            nameDiv.innerHTML = `<h2>${name}<h2>`;
+            nameDiv.innerHTML = `<h2>${name}</h2>Capacity: ${size}`;
             nameDiv.className = 'teamName';
             document.querySelector('.peopleContainer').appendChild(teamDiv);
             teamDiv.appendChild(nameDiv);
