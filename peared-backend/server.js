@@ -117,17 +117,24 @@ app.post('/api/signup', async (req, res) => {
     const person = new People({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        email: req.body.email
+        email: req.body.email,
+        teamId: req.body.teamId
     });
     // append the person to the event's team
     const event = await Event.findById(eventId);
     if (!event) {
+      console.log("Event not found for ID:", eventId); // Log if event is not found
       return res.status(404).json({ error: 'Event not found' });
     }
     if (!event.teams || event.teams.length === 0) {
+      console.log("No teams found for event ID:", eventId); // Log if no teams are found
       return res.status(404).json({ error: 'Team not found' });
     }
-    const team = event.teams[0]; // Access the first team in the array
+    const team = event.teams.find(t => t._id.toString() === req.body.teamId);
+    if (!team) {
+      console.log("Team not found for ID:", req.body.teamId); // Log if team is not found
+      return res.status(404).json({ error: 'Team not found' });
+    }
     team.people.push(person);
     await event.save();
     console.log("Person signed up:", person); // Log the signed-up person

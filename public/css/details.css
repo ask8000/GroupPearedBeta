@@ -26,15 +26,19 @@ body {
   flex-direction: column;
 }
 
-/* .back-link {
-    display: inline-block;
-    margin: 20px 0;
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    left: 20px;
-} */
+.teamName {
+    width: 100%;
+    background-color: #eaf6e3;
+    border-radius: 8px;
+    padding: 12px 5px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #2c3e50;
+    display: block;
+}
+
 
 /* Wrapper for event details */
 .wrapper {
@@ -81,6 +85,11 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* Ensure each team div is on a new line */
+.team {
+    display: block;
+    margin-bottom: 10px; /* Optional: Add spacing between teams */
+}
 
 /* Responsive */
 @media (max-width: 700px) {
@@ -93,7 +102,4 @@ body {
     .wrapper {
         padding: 20px;
     }
-}
-* {
-  outline: 1px solid red; /* temporary for debugging */
 }
