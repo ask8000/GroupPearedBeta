@@ -79,15 +79,6 @@ h1 {
     color: #e9ffdc;
 }
 
-
-
-.person img{
-    width: 200px;
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 20px;
-}
-
-
 .text-group {
     display: flex;
     flex-direction: column;
@@ -114,6 +105,15 @@ h1 {
     align-items: center;
 }
 
+.person img {
+    width: 200px;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    outline: 3px solid #2d3d25;
+}
+
 .extra-sections div {
     background-color: #89ab75;  /* White background for sections */
     color: #2d3d25;
@@ -136,10 +136,10 @@ h1 {
     font-weight: normal;
     font-size: 1.1rem;
 }
+
 .extra-sections .extra-text.visible {
     display: block; 
     opacity: 1;
-    padding: 0 20px;
 }
 
 /* Reveal the extra text on hover */
@@ -184,8 +184,8 @@ form textarea {
     font-family: 'Playfair Display', serif;
   }
   
-  .submit-button:hover {
+.submit-button:hover {
     color: #CDE0C2;
     background: #2d3d25;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  }
+}
