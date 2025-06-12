@@ -8,7 +8,7 @@ Dynamic numbers (right now its only 1 - 2 - 3 but there could be more pages) to 
 Allow users to sign up on different teams for a single event (max one)
 
 MVP Front-end:
-UPDATE TEAM MEMBER INFORMATION
+Update some chopped stuff
 
 Do these later if you have time!
 
