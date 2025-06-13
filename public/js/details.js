@@ -37,7 +37,7 @@ fetch(`${window.location.origin}/api/events/${eventId}`)
             for (const person of list.people) {
                 const personDiv = document.createElement('div');
                 personDiv.className = 'person';
-                personDiv.innerHTML = `${person.firstName} ${person.lastName} (${person.email})`
+                personDiv.innerHTML = `${person.firstName} ${person.lastName}`
                 teamDiv.appendChild(personDiv);
             }
         }
