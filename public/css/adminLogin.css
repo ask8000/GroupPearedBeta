@@ -19,39 +19,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* header {
-    background-color:#89ab75;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-.tagline {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-nav {
-    margin-top: 20px;
-}
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-} 
-.back-link {
-    display: inline-block;
-    margin: 20px 0;
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 500;
-    left: 20px;
-    position: relative;
-}*/
 .admin-header {
     display: flex;
     justify-content: space-between;
@@ -280,4 +247,9 @@ select {
     color: #7f8c8d;
     font-size: 1.1rem;
     margin-bottom: 20px;
+}
+#header-container {
+    height: 70px;
+    width: 100%;
+    background-color: #4e693f;
 }
