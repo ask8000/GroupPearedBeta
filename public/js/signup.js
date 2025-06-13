@@ -17,7 +17,12 @@ const curEvent = fetch(`${window.location.origin}/api/events/${eventId}`)
             const option = document.createElement('option');
             option.value = team._id; // Assuming each team has a unique _id
             option.textContent = team.name; // Assuming each team has a teamName
+            if (team.people.length >= team.size) {
+                option.disabled = true;
+            }
+            option.textContent += ` (${team.people.length}/${team.size})`; // Show current team size
             dropdown.appendChild(option);
+
         }
     })
     .catch(error => {
