@@ -91,7 +91,11 @@ body {
     position: relative;
     text-align: left;
 }
-
+#header-container {
+    height: 70px;
+    width: 100%;
+    background-color: #4e693f;
+}
 /* Input styles */
 .input-box input {
     width: 100%;

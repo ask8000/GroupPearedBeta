@@ -12,6 +12,11 @@ body {
   min-height: 100vh;  /* full viewport height */
     
 }
+#header-container {
+    height: 70px;
+    width: 100%;
+    background-color: #4e693f;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;

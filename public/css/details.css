@@ -104,3 +104,8 @@ body {
         padding: 20px;
     }
 }
+#header-container {
+    height: 70px;
+    width: 100%;
+    background-color: #4e693f;
+}
