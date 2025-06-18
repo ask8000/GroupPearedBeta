@@ -4,7 +4,7 @@ const sendEmail = async () => {
       method: 'POST',
       headers: {
         'accept': 'application/json',
-        'api-key': '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', // Replace with your Brevo API key
+        'api-key':  process.env.BREVO_API_KEY,
         'content-type': 'application/json'
       },
       body: JSON.stringify({
