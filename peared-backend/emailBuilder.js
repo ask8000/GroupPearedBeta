@@ -1,3 +1,5 @@
+require('dotenv').config({path: '.env.local'});
+
 const sendEmail = async () => {
   try {
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
@@ -34,5 +36,5 @@ const sendEmail = async () => {
     console.error('Error sending email:', error.message);
   }
 };
-
+console.log(process.env.BREVO_API_KEY); // Log the API key to ensure it's being read correctly
 sendEmail();
