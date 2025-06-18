@@ -145,4 +145,32 @@ app.post('/api/signup', async (req, res) => {
   }
 })
 
+app.delete('/api/signup', async (req, res) => {
+  try {
+    const eventId = req.query.eventId;
+    const personId = req.query.personId;
+    const event = await Event.findById(eventId);
+    if (!event) {
+      console.log("Event not found for ID:", eventId); // Log if event is not found
+      return res.status(404).json({ error: 'Event not found' });
+    }
+    if (!event.teams || event.teams.length === 0) {
+      console.log("No teams found for event ID:", eventId); // Log if no teams are found
+      return res.status(404).json({ error: 'Team not found' });
+    }
+    const team = event.teams.find(t => t.people.some(p => p._id.toString() === personId));
+    if (!team) {
+      console.log("Team not found for person ID:", personId); // Log if team is not found
+      return res.status(404).json({ error: 'Team not found' });
+    }
+    team.people = team.people.filter(p => p._id.toString() !== personId);
+    await event.save();
+    console.log("Signup deleted for person ID:", personId); // Log the deleted signup
+    res.status(200).json({ message: 'Signup deleted successfully' });
+  } catch (err) {
+    console.error("Error during signup deletion:", err);
+    res.status(500).json({ error: 'Signup deletion failed' });
+  }
+})
+
 app.listen(3000, () => console.log('Server running on port 3000'));
