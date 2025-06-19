@@ -1,6 +1,4 @@
-html {
-    scroll-behavior: smooth;
-}
+/* info.css */
 body {
     /* font-family: 'Playfair Display', serif; */
     margin: 0;
@@ -12,11 +10,91 @@ body {
   min-height: 100vh;  /* full viewport height */
     
 }
-#header-container {
-    height: 70px;
-    width: 100%;
-    background-color: #4e693f;
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6B7B5A;
+}
+
+
+.logo-img {
+    width: 50px;
+    height: 40px;
+    object-fit: cover;
+}
+
+
+
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+
+.nav-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: #F5F5F5;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.nav-button.active {
+    background: #6B7B5A;
+    color: white;
+}
+
+
+.nav-button:hover {
+    background: #6B7B5A;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
