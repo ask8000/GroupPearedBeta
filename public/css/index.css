@@ -1,12 +1,96 @@
-/* index.css - Import base styles and add page-specific styles */
-@import url('./base.css');
+/* index.css */
 
-body {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Hero Section - Full Height */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6B7B5A;
+}
+
+.logo-img {
+    width: 50px;
+    height: 40px;
+    object-fit: cover;
+}
+
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: #F5F5F5;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button.active {
+    background: #6B7B5A;
+    color: white;
+}
+
+.nav-button:hover {
+    background: #6B7B5A;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
 .hero {
     min-height: 100vh;
     background: linear-gradient(135deg, #8B9A7A 0%, #6B7B5A 100%);
@@ -67,7 +151,7 @@ body {
     margin-bottom: 3rem;
 }
 
-.btn-hero-primary {
+.btn-primary {
     padding: 1rem 2rem;
     background: white;
     color: #6B7B5A;
@@ -81,12 +165,12 @@ body {
     display: inline-block;
 }
 
-.btn-hero-primary:hover {
+.btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.btn-hero-secondary {
+.btn-secondary {
     padding: 1rem 2rem;
     background: transparent;
     color: white;
@@ -100,7 +184,7 @@ body {
     display: inline-block;
 }
 
-.btn-hero-secondary:hover {
+.btn-secondary:hover {
     background: white;
     color: #6B7B5A;
     transform: translateY(-3px);
@@ -163,6 +247,11 @@ body {
     animation-delay: 4s;
 }
 
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
 .card-icon {
     width: 50px;
     height: 50px;
@@ -193,6 +282,10 @@ body {
     display: flex;
     align-items: center;
     background: white;
+}
+
+.section-alternate {
+    background: #f8f9fa;
 }
 
 .section-container {
@@ -248,7 +341,7 @@ body {
 
 .section-button {
     padding: 1.2rem 2.5rem;
-    background: linear-gradient(135deg, #6B7B5A, #8B9A7A);
+    background: #6B7B5A;
     color: white;
     border: none;
     border-radius: 50px;
@@ -262,6 +355,7 @@ body {
 }
 
 .section-button:hover {
+    background: #5a6b49;
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(107, 123, 90, 0.3);
 }
@@ -327,6 +421,10 @@ body {
     .hero-visual {
         height: 300px;
         margin-top: 2rem;
+    }
+
+    .nav-menu {
+        display: none;
     }
 
     .section-container {
