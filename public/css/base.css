@@ -84,7 +84,7 @@ body {
 .nav-button:hover {
     background: #6B7B5A;
     color: white;
-    transform: translateY(-2px);
+    transition: all 0.3s ease;
 }
 
 /* Main Content */
@@ -119,7 +119,6 @@ body {
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(107, 123, 90, 0.3);
 }
 
@@ -132,7 +131,6 @@ body {
 .btn-secondary:hover {
     background: #6B7B5A;
     color: white;
-    transform: translateY(-3px);
 }
 
 .btn-approve {
@@ -141,7 +139,6 @@ body {
 }
 
 .btn-approve:hover {
-    transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
 }
 
@@ -151,7 +148,6 @@ body {
 }
 
 .btn-deny:hover {
-    transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
 }
 
@@ -161,7 +157,6 @@ body {
 }
 
 .btn-view:hover {
-    transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
 }
 
@@ -197,7 +192,7 @@ select:focus, input:focus, textarea:focus {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 

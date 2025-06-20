@@ -2,12 +2,14 @@
 @import url('./base.css');
 
 body {
+    padding-top: 20px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     min-height: 100vh;
 }
 
 /* Admin Hero Section */
 .admin-hero {
+    
     background: linear-gradient(135deg, #6B7B5A 0%, #8B9A7A 100%);
     border-radius: 20px;
     padding: 3rem;

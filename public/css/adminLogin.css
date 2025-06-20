@@ -104,7 +104,7 @@ body::before {
     border-color: #6B7B5A;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 0 0 4px rgba(107, 123, 90, 0.1);
-    transform: translateY(-2px);
+ 
 }
 
 .input-box input::placeholder {
@@ -115,8 +115,10 @@ body::before {
 .input-box i {
     position: absolute;
     right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center; /* This centers it vertically */
     font-size: 1.3rem;
     color: #6B7B5A;
     transition: all 0.3s ease;
@@ -124,7 +126,7 @@ body::before {
 
 .input-box input:focus + i {
     color: #5a6b49;
-    transform: translateY(-50%) scale(1.1);
+   
 }
 
 .error-container {
@@ -194,7 +196,7 @@ body::before {
 
 .btn:hover {
     background: linear-gradient(135deg, #5a6b49, #7a8a69);
-    transform: translateY(-3px);
+   
     box-shadow: 0 15px 40px rgba(107, 123, 90, 0.4);
 }
 
@@ -203,7 +205,7 @@ body::before {
 }
 
 .btn:active {
-    transform: translateY(-1px);
+
     box-shadow: 0 8px 25px rgba(107, 123, 90, 0.3);
 }
 
@@ -224,8 +226,8 @@ body::before {
     border-top: 2px solid white;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    transform: translate(-50%, -50%);
 }
+  
 
 @keyframes spin {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
@@ -268,6 +270,10 @@ body::before {
     .input-box i {
         right: 18px;
         font-size: 1.2rem;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
     }
     
     .btn {
@@ -305,6 +311,10 @@ body::before {
     .input-box i {
         right: 15px;
         font-size: 1.1rem;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
     }
     
     .btn {

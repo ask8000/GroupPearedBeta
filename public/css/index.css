@@ -92,6 +92,7 @@ html {
 
 /* Hero Section */
 .hero {
+    padding-top: 56px;
     min-height: 100vh;
     background: linear-gradient(135deg, #8B9A7A 0%, #6B7B5A 100%);
     display: flex;
@@ -162,11 +163,14 @@ html {
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex; /* Changed from inline-block */
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    line-height: 1; /* Override inherited line-height */
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
+
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
@@ -187,7 +191,7 @@ html {
 .btn-secondary:hover {
     background: white;
     color: #6B7B5A;
-    transform: translateY(-3px);
+   
 }
 
 .hero-stats {
@@ -356,7 +360,7 @@ html {
 
 .section-button:hover {
     background: #5a6b49;
-    transform: translateY(-3px);
+    
     box-shadow: 0 10px 30px rgba(107, 123, 90, 0.3);
 }
 
