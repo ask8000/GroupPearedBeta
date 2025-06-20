@@ -31,11 +31,18 @@ app.use(cors({
   credentials: true 
 }));
 
+// yay router time for email stuff
+const emailRouter = require('./routes/email');
+
+// MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
+
+// gotta inherit the mongoDB connection
+app.use('/api/email', emailRouter);
 
 app.post('/api/events', async (req, res) => {
 try {
