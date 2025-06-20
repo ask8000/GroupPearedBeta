@@ -9,6 +9,7 @@ Allow users to sign up on different teams for a single event (max one)
 
 MVP Front-end:
 Update some chopped stuff
+Zoe: is it gud
 
 Do these later if you have time!
 
