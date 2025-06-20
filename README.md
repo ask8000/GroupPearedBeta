@@ -1,6 +1,10 @@
 Do these first! Especially Nathan/Andrew
 
 
+
+
+
+
 MVP Back-end:
 
 Allow the admins to approve/deny events on the admins 
