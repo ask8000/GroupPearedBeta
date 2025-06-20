@@ -1,5 +1,8 @@
 /* signup.css - Modeled after adminLogin.css */
 @import url('./base.css');
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
 
 body {
     background: #f5f7fa;

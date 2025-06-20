@@ -1,4 +1,8 @@
 /* info.css */
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
+
 body {
     /* font-family: 'Playfair Display', serif; */
     margin: 0;

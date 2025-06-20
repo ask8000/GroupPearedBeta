@@ -1,5 +1,8 @@
 /* adminLogin.css - Import base styles and add page-specific styles */
 @import url('./base.css');
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
 
 body {
     background: #f5f7fa;
