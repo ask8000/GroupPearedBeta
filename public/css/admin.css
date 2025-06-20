@@ -104,7 +104,7 @@ body {
 }
 
 .event-card:hover {
-    transform: translateY(-5px);
+    
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
@@ -179,7 +179,7 @@ body {
 }
 
 .team-item:hover {
-    transform: translateY(-2px);
+    
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -242,7 +242,7 @@ body {
 
 .page-btn:hover:not(.active) {
     background: #f8f9fa;
-    transform: translateY(-2px);
+   
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -307,7 +307,7 @@ body {
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
+    
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
@@ -376,7 +376,7 @@ body {
 }
 
 .quick-action-btn:hover {
-    transform: translateY(-3px);
+    
     box-shadow: 0 10px 30px rgba(107, 123, 90, 0.3);
 }
 

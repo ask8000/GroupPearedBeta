@@ -34,10 +34,9 @@ body::before {
     z-index: 2;
 }
 
-/* Login Form Card */
+/* Login Form Card - FIXED WIDTH NO EXPANSION */
 .wrapper {
-    width: 100%;
-    max-width: 450px;
+    width: 550px; /* FIXED WIDTH - CANNOT EXPAND */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -46,6 +45,7 @@ body::before {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+    box-sizing: border-box; /* Include padding in width */
 }
 
 /* Subtle gradient overlay for the form */
@@ -127,6 +127,42 @@ body::before {
     transform: translateY(-50%) scale(1.1);
 }
 
+.error-container {
+    height: 55px; /* FIXED SPACE - prevents vertical shifting */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 1rem 0; /* spacing between input fields and button */
+    position: relative;
+}
+
+.error-message {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    border-radius: 15px;
+    padding: 0.75rem 1rem;
+    color: #e74c3c;
+    font-size: 0.95rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: shake 0.5s ease-in-out;
+    width: 100%;
+    max-width: 100%;
+    word-break: break-word;
+    overflow: hidden;
+    white-space: normal;
+    box-sizing: border-box;
+    display: none; /* HIDDEN BY DEFAULT */
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
 /* Login Button - Extends base button styles */
 .btn {
     width: 100%;
@@ -196,48 +232,6 @@ body::before {
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Error message styling */
-.error-message {
-    background: rgba(231, 76, 60, 0.1);
-    border: 1px solid rgba(231, 76, 60, 0.3);
-    border-radius: 15px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    color: #e74c3c;
-    font-size: 0.95rem;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-}
-
-/* Back link styling */
-.back-link {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.back-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-}
-
 /* Focus accessibility */
 .wrapper:focus-within {
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
@@ -250,6 +244,7 @@ body::before {
     }
     
     .wrapper {
+        width: 100%; /* Use full width on mobile */
         max-width: 100%;
         padding: 2rem 1.5rem;
         border-radius: 20px;
@@ -280,6 +275,10 @@ body::before {
         font-size: 1.1rem;
     }
     
+    .error-container {
+        min-height: 60px; /* Smaller reserved space on mobile */
+    }
+    
     .back-link {
         top: 1rem;
         left: 1rem;
@@ -291,6 +290,7 @@ body::before {
 @media (max-width: 480px) {
     .wrapper {
         padding: 1.5rem 1rem;
+        /* Remove fixed height */
     }
     
     .wrapper h1 {
@@ -310,5 +310,9 @@ body::before {
     .btn {
         height: 45px;
         font-size: 1rem;
+    }
+    
+    .error-container {
+        min-height: 55px; /* Even smaller reserved space */
     }
 }
