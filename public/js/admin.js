@@ -102,3 +102,12 @@ function denyEvent(eventId) {
     // In a real application, this would send an API request to deny the event
     console.log(`Denying event ${eventId}`);
 }
+
+
+
+
+
+
+
+
+

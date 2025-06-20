@@ -1,16 +1,22 @@
-/* General Body and Container */
+/* details.css*/
+@import url('./base.css');
 body {
     /* font-family: 'Playfair Display', serif; */
-    margin: 0;
+   
     padding: 0;
     background-color: #f5f7fa;
     color: #333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-   
+
     
 }
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -46,7 +52,7 @@ body {
     width: 100%;
     max-width: 700px;
     background-color: #fff;
-    margin: 100px auto 40px;
+    margin: 40px auto;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

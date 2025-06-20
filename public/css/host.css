@@ -1,3 +1,8 @@
+/* host.css */
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
+
 body {
     /* font-family: 'Playfair Display', serif; */
     margin: 0;
@@ -10,26 +15,98 @@ body {
   margin: 0; 
     
 }
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding-top: 100px;
     flex: 1;
   display: flex;
   flex-direction: column;
 }
-#header-container {
-    height: 70px;
-    width: 100%;
-    background-color: #4e693f;
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
 }
-.back-link {
-    display: inline-block;
-    margin: 20px 0;
-    color: #19330b;
+
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6B7B5A;
+}
+
+
+.logo-img {
+    width: 50px;
+    height: 40px;
+    object-fit: cover;
+}
+
+
+
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+
+.nav-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: #F5F5F5;
+    color: #666;
     text-decoration: none;
     font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+
+.nav-button.active {
+    background: #6B7B5A;
+    color: white;
+}
+
+
+.nav-button:hover {
+    background: #6B7B5A;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+
+
+
 .form-container {
     background-color: white;
     border-radius: 10px;
@@ -84,7 +161,7 @@ textarea {
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;

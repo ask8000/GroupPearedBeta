@@ -1,53 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Portal | Peared</title>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peared | Admin Portal</title>
+  <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="icon" href="assets/PearedLogo.jpg" type="image/jpeg">
-    <script src="js/loadFooter.js"></script>
-    <script src="js/loadHeader.js"></script>
-    <script src="js/admin.js" defer></script>
+    <link rel="icon" href="assets/PearedLogoBig.jpg" type="image/jpeg">
+
+     <script src="js/admin.js" defer></script>
+
 </head>
 <body>
-    <div id="header-container"></div>
-    
+  <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="assets/PearedLogoNoBgSquare.jpg" alt="Logo" class="logo-img">
 
-    <div class="container">
-        <div class="admin-header">
-            <h2 class="admin-title">Admin Portal - Event Management</h2>
-            
-            <div class="filter-container">
-                <label for="statusFilter">Filter:</label>
-                <select id="statusFilter">
-                    <option value="all">All Events</option>
-                    <option value="pending">Pending Approval</option>
-                    <option value="approved">Approved</option>
-                    <option value="denied">Denied</option>
-                </select>
+                Peared
             </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-button">Home</a>
+                <a href="volunteer.html" class="nav-button">Find Opportunities</a>
+                <a href="host.html" class="nav-button">Host an Event</a>
+                <a href="info.html" class="nav-button">About Us</a>
+                <a href="adminLogin.html" class="nav-button">Admin Portal</a>
+            </nav>
         </div>
-        <h1 class="empty-state">
-            No events to display. Select a filter or check back later.
-        </h1>
-        <div id="eventsContainer">
-            <!-- Events will be dynamically loaded here -->
-            
-        </div>
-        
-        <div class="pagination">
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <button class="page-btn">Next →</button> <!--TODO: Next button functionality, dynamic page numbers-->
-        </div>
-    </div>
+    </header>
 
-    
-<div id="footer-container"></div>
-    
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <!-- Admin Hero Section -->
+      <div class="admin-hero">
+        <div class="admin-hero-content">
+          <h1 class="admin-title">Admin Portal</h1>
+          <p class="admin-subtitle">Manage volunteer events and coordinate community impact across your platform</p>
+          <div class="filter-container">
+            <label for="statusFilter">Filter Events:</label>
+            <select id="statusFilter">
+              <option value="all">All Events</option>
+              <option value="pending">Pending Approval</option>
+              <option value="approved">Approved</option>
+              <option value="denied">Denied</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Events -->
+      <div id="eventsContainer" class="events-grid"></div>
+
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-state-icon">📋</div>
+        <h3>No Events Found</h3>
+        <p>No events match your current filter. Try selecting a different status or check back later for new submissions.</p>
+      </div>
+
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">Next →</button>
+      </div>
+    </div>
+  </div>
+
+
+ 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
