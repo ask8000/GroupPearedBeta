@@ -36,7 +36,7 @@ Make onsite authentication work (possibly using cookies or MongoDB)
 
 Front-end:
 
-Redesign of landing page so that there are rows that take up the screen’s width instead of boxes
+Redesign of landing page so that there are rows that take up the screen’s width instead of boxes ✅
 
 Go through each page and see which are affected by the size of the window/screen and make them dependent on screen size (many pages break on mobile!)
 
