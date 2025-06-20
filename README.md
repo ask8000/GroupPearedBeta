@@ -3,6 +3,7 @@ Do these first! Especially Nathan/Andrew
 
 MVP Back-end:
 Allow the admins to approve/deny events on the admins 
+
 On admin/volunteer pages: dynamic number pages, implementation of the "Next" button
 Dynamic numbers (right now its only 1 - 2 - 3 but there could be more pages) to prevent overloading
 Allow users to sign up on different teams for a single event (max one)
