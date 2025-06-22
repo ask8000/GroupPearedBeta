@@ -10,7 +10,6 @@
     <link rel="icon" href="assets/PearedLogoBig.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
     <script src="js/loadFooter.js"></script>
     <script src="js/index.js" defer></script>
 </head>
@@ -20,9 +19,17 @@
         <div class="header-container">
             <div class="logo">
                 <img src="assets/PearedLogoNoBgSquare.jpg" alt="Logo" class="logo-img">
-
                 Peared
             </div>
+            
+            <!-- Mobile hamburger menu -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+            <label for="nav-toggle" class="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
             <nav class="nav-menu">
                 <a href="index.html" class="nav-button">Home</a>
                 <a href="volunteer.html" class="nav-button">Find Opportunities</a>
@@ -67,8 +74,6 @@
                 <div class="hero-card">
                     <div class="card-icon">
                         <i class="fa-solid fa-handshake"></i>
-                        <!-- <i class="fa-solid fa-hands-holding-child"></i> -->
-                        <!-- <i class="fa-solid fa-seedling"></i> -->
                     </div>
                     <div class="card-title">Empowering Organizations</div>
                     <div class="card-desc">Offering support to help organizations grow their impact</div>
@@ -76,8 +81,6 @@
                 <div class="hero-card">
                     <div class="card-icon">
                         <i class="fa-solid fa-list-check"></i>
-                        <!-- <i class="fa-solid fa-calendar-check"></i> -->
-                        <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
                     </div>
                     <div class="card-title">Streamlining Volunteering</div>
                     <div class="card-desc">Discover, join, and manage local service opportunities all in one place</div>
@@ -85,8 +88,6 @@
                 <div class="hero-card">
                     <div class="card-icon">
                          <i class="fa-solid fa-users"></i>
-                        <!-- <i class="fa-solid fa-network-wired"></i> -->
-                        <!-- <i class="fa-solid fa-heart"></i> -->
                     </div>
                     <div class="card-title">Building Community</div>
                     <div class="card-desc">Bringing volunteers, organizations, and communities together</div>
@@ -99,7 +100,6 @@
     <section id="find-opportunities" class="section-full">
         <div class="section-container">
             <div class="section-content">
-                
                 <h2 class="section-title">Find Opportunities</h2>
                 <p class="section-desc">Discover volunteering events near you and make a difference in your community. Filter by cause, location, and time commitment to find the perfect match for your schedule and interests.</p>
                 <div class="section-features">
@@ -135,7 +135,6 @@
                 </div>
             </div>
             <div class="section-content">
-                
                 <h2 class="section-title">Host an Event</h2>
                 <p class="section-desc">Create a volunteering opportunity and find dedicated volunteers for your cause. Our platform makes it easy to manage applications, coordinate schedules, and build a strong volunteer community.</p>
                 <div class="section-features">
@@ -153,7 +152,6 @@
     <section id="about-us" class="section-full">
         <div class="section-container">
             <div class="section-content">
-              
                 <h2 class="section-title">About Us</h2>
                 <p class="section-desc">Peared was founded with a simple mission: to make volunteering accessible, meaningful, and impactful for everyone. We believe that when passionate people come together, extraordinary things happen.</p>
                 <div class="section-features">
@@ -177,8 +175,5 @@
     </section>
 
     <div id="footer-container"></div>
-   
-
-    
 </body>
 </html>
