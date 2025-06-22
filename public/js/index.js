@@ -48,3 +48,45 @@ document.querySelectorAll('.section-content, .section-visual').forEach(element =
 
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
+
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Close mobile menu when clicking on nav links
+    const navLinks = document.querySelectorAll('.nav-button');
+    const navToggle = document.getElementById('nav-toggle');
+    
+    // Only add mobile menu functionality if the toggle exists
+    if (navToggle) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.checked = false;
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const header = document.querySelector('.header');
+            const isClickInsideHeader = header.contains(event.target);
+            
+            if (!isClickInsideHeader && navToggle.checked) {
+                navToggle.checked = false;
+            }
+        });
+        
+        // Close mobile menu when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navToggle.checked) {
+                navToggle.checked = false;
+            }
+        });
+        
+        // Prevent body scroll when mobile menu is open
+        navToggle.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
